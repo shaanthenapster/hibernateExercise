@@ -31,7 +31,7 @@ public class CreateAuthor {
         session.save(author1);
         Author author2 = new Author();
         author2.setFirstName("Ramlal");
-        author2.setLastName("Pandey");
+        author2.setLastName("Pande");
         author2.setAge(80);
         session.save(author2);
         Author author3 = new Author();
