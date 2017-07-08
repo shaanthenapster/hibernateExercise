@@ -27,5 +27,6 @@
         <mapping class="com.hibernate.demo.Mobile"/>
         <mapping class="com.hibernate.demo.Person"/>-->
         <mapping class="com.hibernate.Author"/>
+        <mapping class="com.hibernate.Subjects"/>
     </session-factory>
 </hibernate-configuration>

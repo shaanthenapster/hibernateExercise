@@ -1,8 +1,8 @@
 package com.hibernate;
-
 import javax.persistence.*;
 import java.time.LocalDate;
-
+import java.util.HashSet;
+import java.util.Set;
 /**
  * Created by shaan on 3/7/17.
  */
@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class Author {
     @Id
     @Column(name="Author_id")
-            @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     int authorid;
      @Column(name = "Full_name")
     String firstName;
@@ -23,13 +23,15 @@ public class Author {
     LocalDate date;
     @Embedded
     Address address =  new Address();
+    @ElementCollection
+    Set<Subjects> listofSubjects = new HashSet<Subjects>();
 
-    public Address getAddress() {
-        return address;
+    public Set<Subjects> getListofSubjects() {
+        return listofSubjects;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setListofSubjects(Set<Subjects> listofSubjects) {
+        this.listofSubjects = listofSubjects;
     }
 
     @Override
@@ -79,6 +81,13 @@ public class Author {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
 

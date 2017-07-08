@@ -3,7 +3,6 @@ package com.hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -14,8 +13,7 @@ import java.time.format.DateTimeFormatter;
 
 public class CreateAuthor {
     public static void main(String[] args) {
-        CreateAuthor createAuthor = new CreateAuthor();
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+            SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         Author author1 = new Author();
@@ -29,7 +27,15 @@ public class CreateAuthor {
         author1.getAddress().setLocation("Dwarka");
         author1.getAddress().setStreenNo("1A");
         author1.getAddress().setState("Delhi");
+        Subjects subjects = new Subjects();
+        subjects.setSubjectName("English");
+        /*subjects.setSubjectName("history");*/
+        author1.getListofSubjects().add(subjects);
+        session.save(subjects);
         session.save(author1);
+
+
+
         Author author2 = new Author();
         author2.setFirstName("Hardeek");
         author2.setLastName("Pandya");
@@ -41,7 +47,15 @@ public class CreateAuthor {
         author2.getAddress().setLocation("Shalimar Bagh");
         author2.getAddress().setStreenNo("10");
         author2.getAddress().setState("noida");
+        Subjects subjects2 = new Subjects();
+        subjects2.setSubjectName("Computer Science");
+        /*subjects2.setSubjectName("Hibernate");*/
+        author2.getListofSubjects().add(subjects2);
+        session.save(subjects2);
         session.save(author2);
+
+
+
         Author author3 = new Author();
         author3.setFirstName("Jhon");
         author3.setLastName("Wick");
@@ -53,7 +67,13 @@ public class CreateAuthor {
         author3.getAddress().setLocation("wales");
         author3.getAddress().setStreenNo("1A/g8");
         author3.getAddress().setState("Canada");
+        Subjects subjects3 = new Subjects();
+        subjects3.setSubjectName(" Theory of Computation");
+        /*subjects3.setSubjectName("Web TEch");*/
+        author1.getListofSubjects().add(subjects3);
+        session.save(subjects3);
         session.save(author3);
+
         Author author4 = new Author();
         author4.setFirstName("shubham");
         author4.setLastName(" sharma");
@@ -65,7 +85,15 @@ public class CreateAuthor {
         author4.getAddress().setLocation("baba dham");
         author4.getAddress().setStreenNo("25");
         author4.getAddress().setState("bholenath gali");
+        Subjects subjects4 = new Subjects();
+        subjects4.setSubjectName("Computer System Architecture");
+        /*subjects4.setSubjectName(" Spring");
+        subjects4.setSubjectName(" Colllections");*/
+        author4.getListofSubjects().add(subjects4);
+        session.save(subjects4);
         session.save(author4);
+
+
         session.getTransaction().commit();
         session.close();
         sessionFactory.close();
