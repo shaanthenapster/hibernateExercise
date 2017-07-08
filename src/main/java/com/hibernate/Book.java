@@ -20,7 +20,6 @@ public class Book {
         this.author = author;
     }
 
-    @OneToOne
     Author author;
     public int getBookId() {
         return bookId;

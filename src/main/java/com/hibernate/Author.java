@@ -25,8 +25,8 @@ public class Author {
     Address address =  new Address();
     @ElementCollection
     Set<Subjects> listofSubjects = new HashSet<Subjects>();
-    @OneToOne
-    @JoinColumn
+    @OneToMany
+    @JoinTable(joinColumns = @JoinColumn(name="Author_id"),inverseJoinColumns =@JoinColumn(name = "BookID"))
     Book book;
 
     public Book getBook() {
