@@ -25,6 +25,17 @@ public class Author {
     Address address =  new Address();
     @ElementCollection
     Set<Subjects> listofSubjects = new HashSet<Subjects>();
+    @OneToOne
+    @JoinColumn
+    Book book;
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
 
     public Set<Subjects> getListofSubjects() {
         return listofSubjects;

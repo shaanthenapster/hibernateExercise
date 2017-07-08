@@ -36,10 +36,14 @@ public class CreateAuthor {
         author1.getListofSubjects().add(firstsubject);
         author1.getListofSubjects().add(secondsubject);
         author1.getListofSubjects().add(thirdsubject);
-        session.persist(firstsubject);
-        session.persist(secondsubject);
-        session.persist(thirdsubject);
-        session.persist(author1);
+        Book book1 = new Book();
+        book1.setBookName("The Broken");
+        author1.setBook(book1);
+        session.save(firstsubject);
+        session.save(secondsubject);
+        session.save(thirdsubject);
+        session.save(author1);
+        session.save(book1);//book wasnt saved
 
 
 
@@ -63,10 +67,14 @@ public class CreateAuthor {
         author2.getListofSubjects().add(firstsubject1);
         author2.getListofSubjects().add(secondsubject1);
         author2.getListofSubjects().add(thirdsubject1);
-        session.persist(firstsubject1);
-        session.persist(secondsubject1);
-        session.persist(thirdsubject1);
-        session.persist(author2);
+        Book book2 = new Book();
+        book2.setBookName("The Coder");
+        author2.setBook(book2);
+        session.save(book2);
+        session.save(firstsubject1);
+        session.save(secondsubject1);
+        session.save(thirdsubject1);
+        session.save(author2);
 
 
 
@@ -90,10 +98,16 @@ public class CreateAuthor {
         author3.getListofSubjects().add(firstsubject3);
         author3.getListofSubjects().add(secondsubject3);
         author3.getListofSubjects().add(thirdsubject3);
-        session.persist(firstsubject3);
-        session.persist(secondsubject3);
-        session.persist(thirdsubject3);
-        session.persist(author3);
+        Book book3 = new Book();
+        book3.setBookName("The Qwerty");
+        author3.setBook(book3);
+        session.save(firstsubject3);
+        session.save(secondsubject3);
+        session.save(thirdsubject3);
+        session.save(book3);
+        session.save(author3);
+
+
 
         Author author4 = new Author();
         author4.setFirstName("shubham");
@@ -115,10 +129,14 @@ public class CreateAuthor {
         author4.getListofSubjects().add(firstsubject4);
         author4.getListofSubjects().add(secondsubject4);
         author4.getListofSubjects().add(thirdsubject4);
-        session.persist(firstsubject4);
-        session.persist(secondsubject4);
-        session.persist(thirdsubject4);
-        session.persist(author4);
+        Book book4 = new Book();
+        book4.setBookName("The Departed");
+        author4.setBook(book4);
+        session.save(firstsubject4);
+        session.save(secondsubject4);
+        session.save(thirdsubject4);
+        session.save(book4);
+        session.save(author4);
 
 
         session.getTransaction().commit();
