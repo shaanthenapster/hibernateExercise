@@ -15,11 +15,11 @@ public class Author {
      @Column(name = "Full_name")
     String firstName;
     @Column(name = "Surname")
-            @Transient
     String lastName;
     @Column(name = "Age")
     int age;
     @Column(name = "Date_of_Birth")
+            @Temporal(TemporalType.DATE)
     LocalDate date;
     @Override
     public String toString() {
