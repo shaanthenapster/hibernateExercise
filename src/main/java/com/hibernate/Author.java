@@ -1,7 +1,7 @@
 package com.hibernate;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * Created by shaan on 3/7/17.
@@ -18,6 +18,8 @@ public class Author {
     String lastName;
     @Column(name = "Age")
     int age;
+    @Column(name = "Date")
+    LocalDate date;
     @Override
     public String toString() {
         return "Author{" +
@@ -58,6 +60,13 @@ public class Author {
 
     public void setAge(int age) {
         this.age = age;
+    }
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }
 
