@@ -15,6 +15,7 @@ public class Author {
      @Column(name = "Full_name")
     String firstName;
     @Column(name = "Surname")
+            @Transient
     String lastName;
     @Column(name = "Age")
     int age;
