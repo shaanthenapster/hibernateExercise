@@ -7,10 +7,11 @@ import java.time.LocalDate;
  * Created by shaan on 3/7/17.
  */
 @Entity
+@Table(name = "Authors")
 public class Author {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name="Author_id")
+            @GeneratedValue(strategy = GenerationType.IDENTITY)
     int authorid;
      @Column(name = "Full_name")
     String firstName;
@@ -19,7 +20,6 @@ public class Author {
     @Column(name = "Age")
     int age;
     @Column(name = "Date_of_Birth")
-            @Temporal(TemporalType.DATE)
     LocalDate date;
     @Override
     public String toString() {
