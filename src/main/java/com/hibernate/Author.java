@@ -1,23 +1,23 @@
-package com.hibernate.Q1Hibernate;
+package com.hibernate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by shaan on 3/7/17.
  */
 @Entity
-@Table(name = "Author")
 public class Author {
     @Id
-            @Column(name = "Author_id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name="a_id")
     int authorid;
+     @Column(name = "f_name")
     String firstName;
+    @Column(name = "Surname")
     String lastName;
+    @Column(name = "Age")
     int age;
-
     @Override
     public String toString() {
         return "Author{" +
