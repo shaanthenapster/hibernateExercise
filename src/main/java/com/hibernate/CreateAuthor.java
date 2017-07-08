@@ -15,15 +15,6 @@ import java.time.format.DateTimeFormatter;
 public class CreateAuthor {
     public static void main(String[] args) {
         CreateAuthor createAuthor = new CreateAuthor();
-        //createAuthor.saveAuthor("Ruskin","Bond",80);
-       /* createAuthor.saveAuthor("RabindraNath","Tagore",90);
-        createAuthor.saveAuthor("Munshi","Premchand",75);
-        createAuthor.saveAuthor("William","Shakespear",80);
-        *//*createAuthor.retriveAuthor();*/
-        /*createAuthor.deleteAuthor();
-        createAuthor.updateAuthor();
-            */
-
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -35,6 +26,9 @@ public class CreateAuthor {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern( "MM/dd/yyyy" ) ;
         LocalDate localDate = LocalDate.parse( input, formatter ) ;
         author1.setDate(localDate);
+        author1.getAddress().setLocation("Dwarka");
+        author1.getAddress().setStreenNo("1A");
+        author1.getAddress().setState("Delhi");
         session.save(author1);
         Author author2 = new Author();
         author2.setFirstName("Hardeek");
@@ -42,8 +36,11 @@ public class CreateAuthor {
         author2.setAge(23);
         String input1 = "06/10/1995" ;
         DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern( "MM/dd/yyyy" ) ;
-        LocalDate localDate1 = LocalDate.parse( input1, formatter ) ;
+        LocalDate localDate1 = LocalDate.parse( input1, formatter1 ) ;
         author2.setDate(localDate1);
+        author2.getAddress().setLocation("Shalimar Bagh");
+        author2.getAddress().setStreenNo("10");
+        author2.getAddress().setState("noida");
         session.save(author2);
         Author author3 = new Author();
         author3.setFirstName("Jhon");
@@ -51,8 +48,11 @@ public class CreateAuthor {
         author3.setAge(18);
         String input3 = "06/06/2000" ;
         DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern( "MM/dd/yyyy" ) ;
-        LocalDate localDate2 = LocalDate.parse( input3, formatter ) ;
+        LocalDate localDate2 = LocalDate.parse( input3, formatter2 ) ;
         author3.setDate(localDate2);
+        author3.getAddress().setLocation("wales");
+        author3.getAddress().setStreenNo("1A/g8");
+        author3.getAddress().setState("Canada");
         session.save(author3);
         Author author4 = new Author();
         author4.setFirstName("shubham");
@@ -60,8 +60,11 @@ public class CreateAuthor {
         author4.setAge(28);
         String input4 = "06/06/2001" ;
         DateTimeFormatter formatter4 = DateTimeFormatter.ofPattern( "MM/dd/yyyy" ) ;
-        LocalDate localDate4 = LocalDate.parse( input4, formatter ) ;
-        author4.setDate(localDate);
+        LocalDate localDate4 = LocalDate.parse( input4, formatter4 ) ;
+        author4.setDate(localDate4);
+        author4.getAddress().setLocation("baba dham");
+        author4.getAddress().setStreenNo("25");
+        author4.getAddress().setState("bholenath gali");
         session.save(author4);
         session.getTransaction().commit();
         session.close();

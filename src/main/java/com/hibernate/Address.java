@@ -9,7 +9,16 @@ import javax.persistence.Entity;
 public class Address {
     String streenNo;
     String location;
-    String street;
+    String state;
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
     public String getStreenNo() {
         return streenNo;
     }
@@ -26,11 +35,4 @@ public class Address {
         this.location = location;
     }
 
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
 }

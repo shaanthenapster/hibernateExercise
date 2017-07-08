@@ -21,6 +21,17 @@ public class Author {
     int age;
     @Column(name = "Date_of_Birth")
     LocalDate date;
+    @Embedded
+    Address address =  new Address();
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "Author{" +
