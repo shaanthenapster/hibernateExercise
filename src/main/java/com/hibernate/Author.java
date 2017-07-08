@@ -10,15 +10,15 @@ import java.time.LocalDate;
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name="a_id")
+    @Column(name="Author_id")
     int authorid;
-     @Column(name = "f_name")
+     @Column(name = "Full_name")
     String firstName;
     @Column(name = "Surname")
     String lastName;
     @Column(name = "Age")
     int age;
-    @Column(name = "Date")
+    @Column(name = "Date_of_Birth")
     LocalDate date;
     @Override
     public String toString() {
