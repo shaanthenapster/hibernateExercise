@@ -3,6 +3,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
+
 /**
  * Created by shaan on 3/7/17.
  */
@@ -19,30 +20,17 @@ public class Author {
     String lastName;
     @Column(name = "Age")
     int age;
-    @Column(name = "Date_of_Birth")
-    LocalDate date;
-    @Embedded
-    Address address =  new Address();
-    @ElementCollection
-    Set<Subjects> listofSubjects = new HashSet<Subjects>();
-    @OneToMany
-    @JoinTable(joinColumns = @JoinColumn(name="Author_id"),inverseJoinColumns =@JoinColumn(name = "BookID"))
-    Book book;
+   @OneToMany
+   @JoinTable(joinColumns = @JoinColumn(name="AUTHOR_ID")
+           ,inverseJoinColumns = @JoinColumn(name = "Book_ID"))
+   Set<Books> listBook = new HashSet<Books>();
 
-    public Book getBook() {
-        return book;
+    public Set<Books> getListBook() {
+        return listBook;
     }
 
-    public void setBook(Book book) {
-        this.book = book;
-    }
-
-    public Set<Subjects> getListofSubjects() {
-        return listofSubjects;
-    }
-
-    public void setListofSubjects(Set<Subjects> listofSubjects) {
-        this.listofSubjects = listofSubjects;
+    public void setListBook(Set<Books> listofSubjects) {
+        this.listBook = listofSubjects;
     }
 
     @Override
@@ -86,19 +74,13 @@ public class Author {
     public void setAge(int age) {
         this.age = age;
     }
-    public LocalDate getDate() {
+   /* public LocalDate getDate() {
         return date;
     }
 
     public void setDate(LocalDate date) {
         this.date = date;
     }
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
+*/
 }
 

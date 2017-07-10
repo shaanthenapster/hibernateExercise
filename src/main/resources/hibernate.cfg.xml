@@ -27,7 +27,9 @@
         <mapping class="com.hibernate.demo.Mobile"/>
         <mapping class="com.hibernate.demo.Person"/>-->
         <mapping class="com.hibernate.Author"/>
-        <mapping class="com.hibernate.Subjects"/>
-        <mapping class="com.hibernate.Book"/>
+        <mapping class="com.hibernate.Books"/>
+       <!-- <mapping class="com.OnetoMany.Vehicle"/>
+        <mapping class="com.OnetoMany.Bachelor"/>-->
+    <!--    <mapping class="com.hibernate.Book"/>-->
     </session-factory>
 </hibernate-configuration>
