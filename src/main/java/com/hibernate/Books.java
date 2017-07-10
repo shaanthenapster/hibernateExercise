@@ -20,8 +20,8 @@ public class Books {
         this.bookName = bookName;
     }
 
-    @ManyToOne
-    Author author;
+   /* @ManyToOne*/
+   /* Author author;
 
     public Author getAuthor() {
         return author;
@@ -30,6 +30,6 @@ public class Books {
     public void setAuthor(Author author) {
         this.author = author;
     }
-
+*/
 
 }

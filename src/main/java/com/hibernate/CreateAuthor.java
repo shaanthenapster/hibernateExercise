@@ -22,15 +22,9 @@ public class CreateAuthor {
         author1.setAge(24);
          Books books = new Books();
           books.setBookName("The qWerty");
-          books.setAuthor(author1);
-       Books books1 = new Books();
-       books1.setBookName("The Departed");
-       books1.setAuthor(author1);
-       author1.getListBook().add(books);
-       author1.getListBook().add(books1);
+        author1.getListBook().add(books);
         session.save(author1);
         session.save(books);
-        session.save(books1);
         session.getTransaction().commit();
         session.close();
         sessionFactory.close();
