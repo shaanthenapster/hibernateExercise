@@ -20,8 +20,7 @@ public class Author {
     String lastName;
     @Column(name = "Age")
     int age;
-    //without additional table
-   @OneToMany(cascade = CascadeType.PERSIST)
+    @ManyToMany
    Set<Books> listBook = new HashSet<Books>();
 
     public Set<Books> getListBook() {
