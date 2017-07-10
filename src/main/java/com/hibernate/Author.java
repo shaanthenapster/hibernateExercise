@@ -20,9 +20,7 @@ public class Author {
     String lastName;
     @Column(name = "Age")
     int age;
-   @OneToMany
-   @JoinTable(joinColumns = @JoinColumn(name="AUTHOR_ID")
-           ,inverseJoinColumns = @JoinColumn(name = "Book_ID"))
+   @OneToMany(mappedBy = "author")
    Set<Books> listBook = new HashSet<Books>();
 
     public Set<Books> getListBook() {
